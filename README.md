@@ -20,8 +20,8 @@ Official MCP Registry: [`dev.levels/readymade`](https://registry.modelcontextpro
 
 ## What you need
 
-1. A ready→made **Pro** (€19/month) or **Lifetime** (€250) plan. MCP access is included;
-   there are no free MCP conversions. [Pricing](https://wpconverters.com/pricing)
+1. A free ready→made account gets **3 MCP conversions** to try it, no card needed. After that,
+   a **Pro** (€19/month) or **Lifetime** (€250) plan; MCP access is included. [Pricing](https://wpconverters.com/pricing)
 2. A **ready→made key**: [api.levels.dev/account](https://api.levels.dev/account)
    (log in with your plugin account, MCP section, Create key). The key is shown once.
 3. A **Figma personal access token** with the *File content: read* scope:
@@ -104,8 +104,13 @@ or edit `~/.cursor/mcp.json`:
 ## Privacy
 
 Your Figma token is sent with each request, forwarded to api.figma.com for that call and
-never stored or logged. We store a hash of your MCP key and, per tool call, the tool name,
-target, success flag, duration, payload size, layer count and MCP client name. No design content.
+never stored or logged. The converted output is not stored. The Figma data of a frame you
+fetched (layers, layout, texts, image references) is cached for 7 days for your account only,
+then deleted automatically. The cache is encrypted with a key derived from your Figma token,
+so nobody with access to our servers can read it, us included. Hosted images are deleted after
+24 hours. We store a hash of your MCP key and, per tool call, the tool name, target, success
+flag, duration, payload size, layer count and MCP client name: usage, not content.
+Deletion on request: support@levels.dev.
 
 ## Pasting into Elementor
 
